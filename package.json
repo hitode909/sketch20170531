@@ -1,7 +1,8 @@
 {
-  "name": "sketch0530",
+  "name": "sketch0531",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hitode909.github.io/sketch20170531/",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
