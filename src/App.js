@@ -1,28 +1,8 @@
 import React, { Component } from 'react';
 import Animator from './Animator';
 
-var defaultCode = `function (size, step) {
-  var radius = step % size;
-  var center = size / 2;
-  var distance = function (x,y) {
-    return Math.sqrt((center-x)*(center-x)+(center-y)*(center-y));
-  };
-  var rows = [];
-  for(var y=0; y < size; y++) {
-    var row = [];
-    for(var x=0; x < size; x++) {
-      var d = distance(x, y);
-      if (d < radius - (size / 4)) {
-        row.push(false);
-      } else if (d < radius) {
-        row.push(true);
-      } else {
-        row.push(false);
-      }
-    }
-    rows.push(row);
-  }
-  return rows;
+var defaultCode = `function (step) {
+  return Math.sin(step / 10) / 2.0 + 0.5;
 }`;
 
 class App extends Component {
@@ -35,7 +15,7 @@ class App extends Component {
       error: false,
     };
   }
-  
+
   codeChanged (event) {
     const code = event.target.value;
     let tickFunction = this.state.tickFunction;
